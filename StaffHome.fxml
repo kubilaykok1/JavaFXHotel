@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="600.0" style="-fx-background-color: #79DAE8; -fx-background-radius: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StaffController">
+   <children>
+      <ImageView fx:id="imagestaff" fitHeight="96.0" fitWidth="100.0" layoutX="53.0" layoutY="41.0" onMouseClicked="#staffsettings" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/icons8-staff-48%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imagersr" fitHeight="96.0" fitWidth="100.0" layoutX="234.0" layoutY="41.0" onMouseClicked="#rsrSettings" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/icons8-reservation-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imageMember" fitHeight="96.0" fitWidth="100.0" layoutX="420.0" layoutY="34.0" onMouseClicked="#memberSettings" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/icons8-defend-family-48.png" />
+         </image>
+      </ImageView>
+      <Button id="line" fx:id="bttnexit" layoutX="414.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#exitClick" prefHeight="26.0" prefWidth="130.0" stylesheets="@../../../../Downloads/stylesheet.css" text="Exit" />
+      <Label layoutX="87.0" layoutY="160.0" text="Staff">
+         <effect>
+            <Reflection />
+         </effect></Label>
+      <Label layoutX="248.0" layoutY="160.0" text="Reservations">
+         <effect>
+            <Reflection />
+         </effect></Label>
+      <Label layoutX="454.0" layoutY="160.0" text="Members">
+         <effect>
+            <Reflection />
+         </effect></Label>
+   </children>
+</AnchorPane>
