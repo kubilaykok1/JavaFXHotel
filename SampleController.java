@@ -83,10 +83,24 @@ public class SampleController {
 	private static final String DATABASE_USERNAME = "root";
 	private static final String DATABASE_PASSWORD = "";
 
+    String fullname;
+    String filename;
 	
+     public void Captcha() {
+	File folder = new File("C:\\Users\\kubil\\eclipse-workspace\\OtelOto\\src\\application\\img\\captcha");
+  	List<File> filesList = Arrays.asList(folder.listFiles());
+  	Collections.shuffle(filesList);
+  	File file = filesList.get(0);
+  	
+  	
+  	fullname=file.getName().toString();
+  	filename=fullname.substring(0,5);
+  	image2.setImage(new Image(getClass().getResourceAsStream("img/captcha/"+ fullname)));
+  }
+
 
     @FXML
-    void ýmageExit(MouseEvent event) {
+    void ï¿½mageExit(MouseEvent event) {
     	System.exit(0);
     }
 
@@ -184,7 +198,7 @@ public class SampleController {
 
  
 	@FXML
-    void SifreHatýrlat(ActionEvent event) {
+    void SifreHatï¿½rlat(ActionEvent event) {
     	try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("SifreHatirlat.fxml"));
@@ -196,7 +210,7 @@ public class SampleController {
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);	
 			scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
-            stage.setTitle("Þifremi Unuttum");
+            stage.setTitle("ï¿½ifremi Unuttum");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -226,7 +240,7 @@ public class SampleController {
             stage.initStyle(StageStyle.TRANSPARENT);	
 			
 			scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
-            stage.setTitle("Üye Kayýt");
+            stage.setTitle("ï¿½ye Kayï¿½t");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -280,7 +294,9 @@ public class SampleController {
 
     
     @FXML
-    void initialize() {    	 	
+    void initialize() {    
+
+        Captcha();	 	
     	Polygon poly = new Polygon();  
         
         //Setting points for the polyogn   
