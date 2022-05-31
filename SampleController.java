@@ -162,27 +162,40 @@ public class SampleController {
         
     
     
-    @FXML
+  @FXML
     void Giris(ActionEvent event) throws SQLException {
+    	
     	int control = LoginCheck(emailtxt.getText(),psswordtxt.getText());
     	if (control==0) {
-    		
-    		
+    		 if(txt2.getText().equals(filename))
+    		 { 
+    		 
     		try{
-               
-    			 FXMLLoader fxmlLoader = new FXMLLoader();
-    	            fxmlLoader.setLocation(getClass().getResource("Anasayfa.fxml"));
+    			final Stage stage1 = (Stage) girisbttn.getScene().getWindow();
+        		stage1.close();
+    			FXMLLoader fxmlLoader = new FXMLLoader();
+    	        fxmlLoader.setLocation(getClass().getResource("Anasayfa.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(fxmlLoader.load(), 327, 362);
                 stage.initStyle(StageStyle.UNDECORATED);
                 stage.setScene(scene);
                 stage.show();
+                
             }catch (IOException exception) {
                 System.out.println("Error!!!");
                 System.out.println("Error : "+exception.getMessage());
             }
-            Stage stage = (Stage)girisbttn.getScene().getWindow();
-            stage.close();
+    		}
+    		
+    			else {
+    	            Alert hata= new Alert(AlertType.ERROR);
+    	            hata.setTitle("ERROR");
+    	            hata.setHeaderText("TRY AGAIN");
+    	            hata.setContentText("Security code is incorrect");
+    	            hata.showAndWait();
+    	        }
+    			
+          
         } else {
             Alert hata= new Alert(AlertType.ERROR);
             hata.setTitle("ERROR");
@@ -190,13 +203,11 @@ public class SampleController {
             hata.setContentText("Username or Password wrong");
             hata.showAndWait();
         }
-
+    	
       
         
         
     }
-
- 
 	@FXML
     void SifreHat�rlat(ActionEvent event) {
     	try {
